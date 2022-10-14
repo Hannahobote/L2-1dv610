@@ -2,7 +2,7 @@ import {SimpleAuth} from './simple-auth/v2/src/controller/simpleAuth.js'
 
 export class Auth {
   
-  constructor(model, view ) {
+  constructor( ) {
      this.auth = new SimpleAuth(process.env.DB_CONNECTION_STRING);
   }
 
