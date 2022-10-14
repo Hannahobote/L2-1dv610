@@ -1,12 +1,12 @@
-import {SimpleAuth} from '../simple-auth-module/src/controller/simpleAuth.js'
+import { SimpleAuth } from './simple-auth-module/src/controller/simpleAuth.js'
 
 export class Auth {
-  
-  constructor( ) {
-     this.auth = new SimpleAuth(process.env.DB_CONNECTION_STRING);
+
+  constructor() {
+    this.auth = new SimpleAuth(process.env.DB_CONNECTION_STRING);
   }
 
-  register(username, password) {
+   register(username, password) {
     return this.auth.register(username, password)
   }
 

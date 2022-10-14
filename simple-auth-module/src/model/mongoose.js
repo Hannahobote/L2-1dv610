@@ -23,7 +23,7 @@ export class ConfigMongoose {
    */
   connectDatabase () {
     try {
-     /* mongoose.connection.on('connected', () => console.log('Mongoose connection is open.'))
+    /* mongoose.connection.on('connected', () => console.log('Mongoose connection is open.'))
       mongoose.connection.on('error', err => console.error(`Mongoose connection error has occurred: ${err}`))
       mongoose.connection.on('disconnected', () => console.log('Mongoose connection is disconnected.'))
 
@@ -33,7 +33,7 @@ export class ConfigMongoose {
           console.log('Mongoose connection is disconnected due to application termination.')
           process.exit(0)
         })
-      })*/
+      }) */
 
       // Connect to the server.
       return mongoose.connect(this.databaseConnectionString, {
