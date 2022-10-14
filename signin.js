@@ -1,4 +1,4 @@
-// import {Auth} from "./auth.js"
+import {Auth} from "./auth.js"
 
 const template = document.createElement('template')
 template.innerHTML = `
