@@ -1,4 +1,4 @@
-import {Auth} from "./auth.js"
+import {Auth} from './src/controller/simpleAuth.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -7,15 +7,19 @@ template.innerHTML = `
 
 </style>
 
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+
   <!--signIn form form-->
+  <h3>Login</h3>
+  <div id="errorEvent" ></div>
 
   <form class="signIn">
-    <h3>Login</h3>
 
     <div class="grid">
   
   <!--diplays error msg on error-->
-    <div id="errorEvent" ></div>
 
       <label for="username">
         username
@@ -52,7 +56,7 @@ customElements.define('sign-in',
       this.username = this.shadowRoot.querySelector('#username')
       this.password = this.shadowRoot.querySelector('#password')
       this.errorBox = this.shadowRoot.querySelector('#errorEvent')
-      this.auth = new Auth()
+      // this.auth = new Auth()
 
     }
 

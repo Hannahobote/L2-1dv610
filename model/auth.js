@@ -1,4 +1,4 @@
-import {SimpleAuth} from './simple-auth/v2/src/controller/simpleAuth.js'
+import {SimpleAuth} from '../simple-auth-module/src/controller/simpleAuth.js'
 
 export class Auth {
   
