@@ -6,13 +6,36 @@ public class View {
   Scanner scanner = new Scanner(System.in);
 
   public void menu() {
-    System.out.println("===Welcome to Simple Auth===");
-    System.out.println("===1. sign in===");
+    System.out.println("===Welcome to the admin panel===");
+    System.out.println("===1.register user===");
+    System.out.println("===2.sign in===");
+    System.out.println("\n");
+
   }
 
-  public void menuSignedIn() {
-    System.out.println("===1. sign out===");
+  public void userDashboard() {
+    System.out.println("===3. sign out===");
+    System.out.println("===4. current signed in user===");
+    System.out.println("===5. view entire database===");
   }
+  
+  public String registerUserCmd() {
+    return "1";
+  }
+
+  public String signInCmd() {
+    return "2";
+  }
+
+  public String signOutCmd() {
+    return "3";
+  }
+
+  
+  public String printCurrentUserInfoCmd() {
+    return "4";
+  }
+
 
   public String getStringInput() {
     return scanner.next();
