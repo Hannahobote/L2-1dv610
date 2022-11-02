@@ -33,7 +33,6 @@ public class SimpleAuth {
     checkCorrectCredentials(username, password);
   }
 
-  // TODO: does not work when several users are registered.
   private void checkIfUserExist(String username) {
     if (!usernameDatabase.getAllNames().contains(username)) {
       throw new Error("user Does not exist");
@@ -44,13 +43,12 @@ public class SimpleAuth {
     for (User user : userDatabase.getAllUsers()) {
 
       if (user.getUsername().equals(username)) {
-        // id username is correct, select that user object
+        // if username is correct, select that user object
         int index = userDatabase.getAllUsers().indexOf(user);
         User selectedUser = userDatabase.getOneUser(index);
 
         // compare password of that user object
         if (selectedUser.getPassword().equals(password)) {
-          System.out.println("password correct");
           user.setAuthenticated(true);
           setCurrentUser(user);
           view.signInSuccessMsg(username);

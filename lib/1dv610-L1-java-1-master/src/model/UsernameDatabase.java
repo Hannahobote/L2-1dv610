@@ -23,7 +23,7 @@ public class UsernameDatabase {
       for (String name : nameList) {
         // check if name exist
         if(name.contains(nameToCheck)) {
-          throw new Error("The username is already beign used. Try another name.");
+          throw new Error("The username is already being used. Try another name.");
         }
       }
     } 
