@@ -25,7 +25,8 @@ public class SimpleAuth {
 
     userDatabase.addUsers(user);
     view.registerSuccessMsg(user);
-    view.printUserDatabase(getAllUsers());
+    //TODO: for error checking
+   //  view.printUserDatabase(getAllUsers());
   }
 
   public void signIn(String username, String password) {

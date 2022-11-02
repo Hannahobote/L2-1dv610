@@ -68,9 +68,18 @@ public class Controller {
     if(userAnswer.contains(view.printCurrentUserInfoCmd())) {
       viewCurrentUserInfo();
     }
+
+    if(userAnswer.contains(view.printDatabaseCmd())) {
+      printDatabase();
+    }
   }
 
   public void viewCurrentUserInfo() {
+    authView.printOneUser(auth.getCurrentUser());
+    userDashboard();
+  }
+
+  public void printDatabase() {
     authView.printUserDatabase(auth.getAllUsers());
     userDashboard();
   }

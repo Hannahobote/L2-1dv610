@@ -40,6 +40,11 @@ public class View {
     return "4";
   }
 
+  public String printDatabaseCmd() {
+    return "5";
+  }
+
+
 
   public String getStringInput() {
     return scanner.nextLine();
