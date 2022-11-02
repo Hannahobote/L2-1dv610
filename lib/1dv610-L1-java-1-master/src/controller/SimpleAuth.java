@@ -12,42 +12,53 @@ import src.view.ConsoleUi;
 public class SimpleAuth {
 
   private UserDatabase userDatabase = new UserDatabase();
-  private UsernameDatabase nameList = new UsernameDatabase();
+  private UsernameDatabase usernameDatabase = new UsernameDatabase();
   private ConsoleUi view = new ConsoleUi();
   private User currentUser;
 
   public void registerUser(String newUsername, String newPassword) {
     Username username = new Username(newUsername);
     Password password = new Password(newPassword);
+    usernameDatabase.addUsername(newUsername);
 
-    nameList.addUsername(newUsername);
     User user = new User(username, password);
-  
+
     userDatabase.addUsers(user);
     view.registerSuccessMsg(user);
+    view.printUserDatabase(getAllUsers());
   }
 
   public void signIn(String username, String password) {
-    for (User user : userDatabase.getAllUsers()) {
-      checkIfUserExist(user, username);
-      checkCorrectCredentials(user, username, password);
-    }
+    checkIfUserExist(username);
+    checkCorrectCredentials(username, password);
   }
 
   // TODO: does not work when several users are registered.
-  private void checkIfUserExist(User user, String username) {
-      if (!user.getUsername().contains(username)) {
-        throw new Error("user Does not exist");
-      }
+  private void checkIfUserExist(String username) {
+    if (!usernameDatabase.getAllNames().contains(username)) {
+      throw new Error("user Does not exist");
+    } 
   }
 
-  private void checkCorrectCredentials(User user, String username, String password) {
-    if (user.getUsername().contains(username) && user.getPassword().contains(password)) {
-      user.setAuthenticated(true);
-      setCurrentUser(user);
-      view.signInSuccessMsg(username);
-    } else {
-      throw new Error("username or password is incorrect. Try again.");
+  public void checkCorrectCredentials(String username, String password) {
+    for (User user : userDatabase.getAllUsers()) {
+
+      if (user.getUsername().equals(username)) {
+        // id username is correct, select that user object
+        int index = userDatabase.getAllUsers().indexOf(user);
+        User selectedUser = userDatabase.getOneUser(index);
+
+        // compare password of that user object
+        if (selectedUser.getPassword().equals(password)) {
+          System.out.println("password correct");
+          user.setAuthenticated(true);
+          setCurrentUser(user);
+          view.signInSuccessMsg(username);
+        } else {
+          throw new Error("username or password is incorrect. Try again.");
+        }
+
+      }
     }
   }
 

@@ -10,6 +10,12 @@ public class UsernameDatabase {
     nameList.add(name);
   }
 
+  public ArrayList<String> getAllNames() {
+    ArrayList<String> copy = new ArrayList<>();
+    copy.addAll(nameList);
+    return copy;
+  }
+
   public void checkDuplicateName(String nameToCheck) {
     // if list is not empty, check for duplicates
     if(nameList.size() != 0) {
