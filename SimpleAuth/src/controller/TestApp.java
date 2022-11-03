@@ -14,8 +14,8 @@ public class TestApp {
     // 1. register a user (works)
     simpleAuth.registerUser("hannah", "password");
 
-    // 2. register a second member (does not work)
-    simpleAuth.registerUser("john doe", "password");
+    // 2. register a second member (works)
+     simpleAuth.registerUser("john doe", "password");
     
     // 3. register someone with the same name
     // simpleAuth.registerUser("hannah", "password");

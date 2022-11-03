@@ -9,10 +9,10 @@ public class UserDatabase {
     userList.add(user);
   }
 
- public ArrayList<User> getAllUsers() {
-  ArrayList<User> copy = new ArrayList<>();
-  copy.addAll(userList);
-  return copy;
+  public ArrayList<User> getAllUsers() {
+    ArrayList<User> copy = new ArrayList<>();
+    copy.addAll(userList);
+    return copy;
   }
 
   public User getOneUser(int index) {

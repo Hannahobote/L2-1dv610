@@ -1,4 +1,5 @@
 package src.model;
+
 import java.util.ArrayList;
 
 public class UsernameDatabase {
@@ -6,7 +7,7 @@ public class UsernameDatabase {
   private ArrayList<String> nameList = new ArrayList<>();
 
   public void addUsername(String name) throws Exception {
-    checkDuplicateName(name);
+    checkForDuplicates(name);
     nameList.add(name);
   }
 
@@ -16,16 +17,27 @@ public class UsernameDatabase {
     return copy;
   }
 
-  public void checkDuplicateName(String nameToCheck) throws Exception {
-    // if list is not empty, check for duplicates
-    if(nameList.size() != 0) {
-      // loop through list
-      for (String name : nameList) {
-        // check if name exist
-        if(name.contains(nameToCheck)) {
-          throw new Exception("The username is already being used. Try another name.");
-        }
-      }
-    } 
+  public void checkForDuplicates(String nameToCheck) throws Exception {
+    // if list is not empty, check for dupes
+    if (!isListEmpty()) {
+      FindDuplicateNames(nameToCheck);
+    }
   }
+
+  public Boolean isListEmpty() {
+    if (nameList.size() == 0) {
+      return true;
+    }
+    return false;
+  }
+
+  public void FindDuplicateNames(String nameToCheck) throws Exception {
+    for (String name : nameList) {
+      // if name exist already
+      if (name.equals(nameToCheck)) {
+        throw new Exception("The username is already being used. Try another name.");
+      }
+    }
+  }
+
 }
