@@ -46,7 +46,6 @@ public class Controller {
   }
 
   public void signIn() {
-    //TODO: sign in on the second round, signs in even if password is incorrect
     view.askUsername();
     String username = view.getStringInput();
 
