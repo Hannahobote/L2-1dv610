@@ -108,8 +108,6 @@ public class Controller {
 
   public void signOut() {
     auth.signOut();
-    // TODO: code below for testing purpopses
-    // authView.printUserDatabase(auth.getAllUsers());
     menu();
   }
 }

@@ -1,4 +1,5 @@
 package view;
+
 import java.util.Scanner;
 
 public class View {
@@ -30,7 +31,7 @@ public class View {
     System.out.println("=== 5. view entire database===");
     System.out.println("\n");
   }
-  
+
   public String registerUserCmd() {
     return "1";
   }
@@ -43,7 +44,6 @@ public class View {
     return "3";
   }
 
-  
   public String printCurrentUserInfoCmd() {
     return "4";
   }
@@ -52,14 +52,8 @@ public class View {
     return "5";
   }
 
-
-
   public String getStringInput() {
     return scanner.nextLine();
-  }
-
-  public int getIntegerInput() {
-    return scanner.nextInt();
   }
 
   public void askUsername() {
@@ -68,11 +62,6 @@ public class View {
 
   public void askPassword() {
     System.out.println("write your password");
-  }
-
-  public void currentUserMessage() {
-    System.out.println("Welcome, you are signed in");
-    //TODO: greet user and give them an option to sign out
   }
 
   public void printError(Exception error) {
