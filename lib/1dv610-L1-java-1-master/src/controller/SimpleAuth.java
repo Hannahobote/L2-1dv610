@@ -28,41 +28,19 @@ public class SimpleAuth {
   }
 
   public void signIn(String username, String password) {
-    checkCorrectCredentials2(username, password);
+    checkCorrectCredentials(username, password);
   }
 
   public void checkCorrectCredentials(String username, String password) {
-    for (User user : userDatabase.getAllUsers()) {
-
-      if (user.getUsername().equals(username)) {
-        // if username is correct, select that user object
-        int index = userDatabase.getAllUsers().indexOf(user);
-        User selectedUser = userDatabase.getOneUser(index);
-
-          // compare password of that user object
-          if (selectedUser.getPassword().equals(password)) {
-            user.setAuthenticated(true);
-            setCurrentUser(user);
-            view.signInSuccessMsg(username);
-          } else {
-            throw new Error("username or password is incorrect. Try again.");
-          }
-      } else {
-         throw new Error("user Does not exist");
-      }
-    }
-  }
-
-  public void checkCorrectCredentials2(String username, String password) {
     // loop all users in db
     for (User user : userDatabase.getAllUsers()) {
-      
+
       // check if user exist
-      if(userExist(username)) {
-       
+      if (userExist(username)) {
+
         // check if password is correct for selected user
         User selectedUser = matchedUser(user);
-        if(passwordIsCorrect(selectedUser, password)) {
+        if (passwordIsCorrect(selectedUser, password)) {
           authenticateUser(selectedUser);
         } else {
           throw new Error("username or password is incorrect. Try again.");
@@ -78,7 +56,7 @@ public class SimpleAuth {
   public boolean userExist(String username) {
     if (usernameDatabase.getAllNames().contains(username)) {
       return true;
-    } 
+    }
     return false;
   }
 
@@ -90,7 +68,7 @@ public class SimpleAuth {
   }
 
   public boolean passwordIsCorrect(User user, String password) {
-    if(user.getPassword().equals(password)) {
+    if (user.getPassword().equals(password)) {
       return true;
     }
     return false;
