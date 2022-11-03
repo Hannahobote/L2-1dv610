@@ -1,13 +1,6 @@
 | test nr | Vad som testas/krav  | Hur det testas | Testresultat |
 | --- | --- | --- | --- |
-| 1 | Registrera en användare  | Skriver du “1” i terminalen kan du registrera en användare. Då kan du skriva ett användarnamn och ett lösenord  | ===Welcome to the Employee workspace===
-=== 1.register user===
-=== 2.sign in=== 
-1
-write your username
-admin
-write your password
-admin123 |
+| 1 | Registrera en användare  | Skriver du “1” i terminalen kan du registrera en användare. Då kan du skriva ett användarnamn och ett lösenord  | ![test1](images/test1.png) |
 | 2 | Registrera en användare som redan finns  |  |  |
 | 3 | Logga in en användare |  |  |
 | 4 | Logga in en användare som inte finns |  |  |
