@@ -6,7 +6,7 @@ import src.view.ConsoleUi;
 public class TestApp {
 
   
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 
     ConsoleUi view = new ConsoleUi();
     SimpleAuth simpleAuth = new SimpleAuth();

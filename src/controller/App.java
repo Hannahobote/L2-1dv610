@@ -4,7 +4,7 @@ import src.controller.SimpleAuth;
 import view.View;
 
 public class App {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     SimpleAuth auth = new SimpleAuth();
     View view = new View();
     Controller controller = new Controller(auth, view);

@@ -4,7 +4,7 @@ public class Username {
 
   private String name;
 
-  public Username(String name) {
+  public Username(String name) throws Exception {
    this.name = name;
    checkIfStringIsEmpty(name);
   }
@@ -17,9 +17,9 @@ public class Username {
     this.name = name;
   }
  
-  public void checkIfStringIsEmpty(String name) {
+  public void checkIfStringIsEmpty(String name) throws Exception {
     if(name.isEmpty() || name.length() < 2) {
-      throw new Error("Name must atleast consist of 2 characters");
+      throw new Exception("Name must atleast consist of 2 characters");
     }
   }
 

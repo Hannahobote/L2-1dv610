@@ -16,7 +16,7 @@ public class SimpleAuth {
   private ConsoleUi view = new ConsoleUi();
   private User currentUser;
 
-  public void registerUser(String newUsername, String newPassword) {
+  public void registerUser(String newUsername, String newPassword) throws Exception {
     Username username = new Username(newUsername);
     Password password = new Password(newPassword);
     usernameDatabase.addUsername(newUsername);
@@ -27,18 +27,18 @@ public class SimpleAuth {
     view.registerSuccessMsg(user);
   }
 
-  public void signIn(String username, String password) {
+  public void signIn(String username, String password) throws Exception {
     checkIfUserExist(username);
     checkCorrectCredentials(username, password);
   }
 
-  private void checkIfUserExist(String username) {
+  private void checkIfUserExist(String username) throws Exception {
     if (!usernameDatabase.getAllNames().contains(username)) {
-      throw new Error("user Does not exist");
+      throw new Exception("user Does not exist");
     } 
   }
 
-  public void checkCorrectCredentials(String username, String password) {
+  public void checkCorrectCredentials(String username, String password) throws Exception {
     for (User user : userDatabase.getAllUsers()) {
 
       if (user.getUsername().equals(username)) {
@@ -52,7 +52,7 @@ public class SimpleAuth {
             setCurrentUser(user);
             view.signInSuccessMsg(username);
           } else {
-            throw new Error("username or password is incorrect. Try again.");
+            throw new Exception("username or password is incorrect. Try again.");
           }
       }
     }

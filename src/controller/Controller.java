@@ -33,7 +33,7 @@ public class Controller {
     }
   }
 
-  public void registerUser() {
+  public void registerUser() throws Exception {
     view.askUsername();
     String username = view.getStringInput();
 
@@ -45,7 +45,7 @@ public class Controller {
     menu();
   }
 
-  public void signIn() {
+  public void signIn() throws Exception {
     view.askUsername();
     String username = view.getStringInput();
 
@@ -97,13 +97,11 @@ public class Controller {
 
   public void viewCurrentUserInfo() {
     authView.printOneUser(auth.getCurrentUser());
-    //userDashboard();
     pickDashboard(auth.getCurrentUser().getUsername());
   }
 
   public void printDatabase() {
     authView.printUserDatabase(auth.getAllUsers());
-    //userDashboard();
     pickDashboard(auth.getCurrentUser().getUsername());
   }
 

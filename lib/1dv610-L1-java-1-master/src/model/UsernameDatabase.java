@@ -5,7 +5,7 @@ public class UsernameDatabase {
 
   private ArrayList<String> nameList = new ArrayList<>();
 
-  public void addUsername(String name) {
+  public void addUsername(String name) throws Exception {
     checkDuplicateName(name);
     nameList.add(name);
   }
@@ -16,14 +16,14 @@ public class UsernameDatabase {
     return copy;
   }
 
-  public void checkDuplicateName(String nameToCheck) {
+  public void checkDuplicateName(String nameToCheck) throws Exception {
     // if list is not empty, check for duplicates
     if(nameList.size() != 0) {
       // loop through list
       for (String name : nameList) {
         // check if name exist
         if(name.contains(nameToCheck)) {
-          throw new Error("The username is already being used. Try another name.");
+          throw new Exception("The username is already being used. Try another name.");
         }
       }
     } 
