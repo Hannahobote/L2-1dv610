@@ -1,6 +1,5 @@
 package src.controller;
 
-import src.model.UserDatabase;
 import src.view.ConsoleUi;
 
 // maual testing
@@ -8,8 +7,7 @@ public class TestApp {
 
   
   public static void main(String[] args) {
-    
-    UserDatabase model = new UserDatabase();
+
     ConsoleUi view = new ConsoleUi();
     SimpleAuth simpleAuth = new SimpleAuth();
 
@@ -17,7 +15,7 @@ public class TestApp {
     simpleAuth.registerUser("hannah", "password");
 
     // 2. register a second member (does not work)
-    // simpleAuth.registerUser("john doe", "password");
+    simpleAuth.registerUser("john doe", "password");
     
     // 3. register someone with the same name
     // simpleAuth.registerUser("hannah", "password");

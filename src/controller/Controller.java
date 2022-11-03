@@ -53,8 +53,34 @@ public class Controller {
     String password = view.getStringInput();
 
     auth.signIn(username, password);
-    userDashboard();
+    pickDashboard(username);
   } 
+
+  public void pickDashboard(String username) {
+    if(username.equals("admin")) {
+      adminDashboard();
+    } else {
+      userDashboard();
+    }
+  }
+
+  public void adminDashboard() {
+    view.adminDashboard();
+    String userAnswer = view.getStringInput();
+
+    if(userAnswer.contains(view.signOutCmd())) {
+      signOut();
+    }
+
+    if(userAnswer.contains(view.printCurrentUserInfoCmd())) {
+      viewCurrentUserInfo();
+    }
+
+    if(userAnswer.contains(view.printDatabaseCmd())) {
+      printDatabase();
+    }
+  }
+
 
   public void userDashboard() {
     view.userDashboard();
@@ -67,25 +93,24 @@ public class Controller {
     if(userAnswer.contains(view.printCurrentUserInfoCmd())) {
       viewCurrentUserInfo();
     }
-
-    if(userAnswer.contains(view.printDatabaseCmd())) {
-      printDatabase();
-    }
   }
 
   public void viewCurrentUserInfo() {
     authView.printOneUser(auth.getCurrentUser());
-    userDashboard();
+    //userDashboard();
+    pickDashboard(auth.getCurrentUser().getUsername());
   }
 
   public void printDatabase() {
     authView.printUserDatabase(auth.getAllUsers());
-    userDashboard();
+    //userDashboard();
+    pickDashboard(auth.getCurrentUser().getUsername());
   }
 
   public void signOut() {
     auth.signOut();
-    authView.printUserDatabase(auth.getAllUsers());
+    // TODO: code below for testing purpopses
+    // authView.printUserDatabase(auth.getAllUsers());
     menu();
   }
 }

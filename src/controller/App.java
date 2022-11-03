@@ -5,9 +5,14 @@ import view.View;
 
 public class App {
   public static void main(String[] args) {
-    SimpleAuth auth  = new SimpleAuth();
+    SimpleAuth auth = new SimpleAuth();
     View view = new View();
     Controller controller = new Controller(auth, view);
+
+    // create admin by default
+    auth.registerUser("admin", "admin123");
+
+    // run program
     controller.menu();
   }
 }

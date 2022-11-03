@@ -7,19 +7,27 @@ public class View {
 
   public void menu() {
     System.out.println("\n");
-    System.out.println("===Welcome to the admin panel===");
-    System.out.println("===1.register user===");
-    System.out.println("===2.sign in===");
+    System.out.println("===Welcome to the Employee workspace===");
+    System.out.println("=== 1.register user===");
+    System.out.println("=== 2.sign in===");
     System.out.println("\n");
 
   }
 
   public void userDashboard() {
     System.out.println("\n");
-    System.out.println("===Welcome to the user dashboard===");
-    System.out.println("===3. sign out===");
-    System.out.println("===4. current signed in user===");
-    System.out.println("===5. view entire database===");
+    System.out.println("=== Welcome to the user dashboard===");
+    System.out.println("=== 3. sign out===");
+    System.out.println("=== 4. view your user information===");
+    System.out.println("\n");
+  }
+
+  public void adminDashboard() {
+    System.out.println("\n");
+    System.out.println("=== Welcome to the Admin dashboard===");
+    System.out.println("=== 3. sign out===");
+    System.out.println("=== 4. view your user information===");
+    System.out.println("=== 5. view entire database===");
     System.out.println("\n");
   }
   
