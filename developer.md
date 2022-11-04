@@ -18,6 +18,21 @@ Med denna exempel applikationen ska en slutavändare kunna
    2. man ska inte kunna logga in med fel lössenord
    3. man ska inte kunna logga in om användaren inte finns.
 
+## Funktioner som kan tänkas implementeras i framtiden 
+
+SimpleAuth
+  1. Byta sitt användarnamn
+  2. Skriva sitt för och efternamn
+  3. lägga till ett mobilnr 
+  4. lägga till ett email
+
+EmployeeHome
+1. Clock in
+2. Clock out
+3. Se sin lön specifikation
+4. Sjukanmälan 
+5. semesterdagar
+   
 ## Test
 Alla tester har dokumenteras i [test.md](test.md).
 
