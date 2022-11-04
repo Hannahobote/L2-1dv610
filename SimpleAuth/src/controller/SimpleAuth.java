@@ -33,11 +33,18 @@ public class SimpleAuth {
   }
 
   private void checkIfUserExist(String username) throws Exception {
+    // if name is not found in database, throw error
     if (!usernameDatabase.getAllNames().contains(username)) {
       throw new Exception("user Does not exist");
     } 
   }
 
+  /**
+   * Will check the databse and see if username and password corresponds with that, which is in the database.
+   * @param username
+   * @param password
+   * @throws Exception If username or password is incorrect.
+   */
   public void checkCorrectCredentials(String username, String password) throws Exception {
     for (User user : userDatabase.getAllUsers()) {
 
@@ -60,6 +67,7 @@ public class SimpleAuth {
 
   public void signOut() {
     view.signOutSuccessMsg(currentUser.getUsername());
+    // reset the state of the previous signed in user.
     currentUser.setAuthenticated(false);
     setCurrentUser(null);
   }

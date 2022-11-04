@@ -40,7 +40,7 @@ Alla tester är skrivna i [test.md](test.md).
  
  
 ## Beskrivning av kod: vad fungerar? vad fungerar inte?
-Alla funktionerna i kraven fungerar. Det enda som inte fungerar är att logga in flera användare samtidigt, på flera olika datorer. Detta kan implementeras med session cookies i framtiden. För mer information om koden, kan du kolla på kommentarerna som finns vid metoderna.
+Alla funktionerna i kraven fungerar. Det enda som inte fungerar är att logga in flera användare samtidigt, på flera olika datorer. Detta kan implementeras med session cookies i framtiden. För mer information om koden, kan du kolla på inline kommentarerna som finns i metoderna. En sträng regel för användarrollerna är inte tillagd ännu, det har bara blivit tillämpt manuelt. Dvs att vanliga användare kan skapa ett konto som innehåller "admin" och kanske få tillgång till admin behörigheter. Detta är något som kan utvecklas i framtiden.
  
 ## Changes made to SimpleAuth
 1. Changed to `equals()` instead of `contains()` when comparing username and password to input data, because contain() would validate the user if they had a password similar to something in the database. I needed the credentials to be exact. [Check code here](SimpleAuth/src/controller/SimpleAuth.java), at method `checkCorrectCredentials()`

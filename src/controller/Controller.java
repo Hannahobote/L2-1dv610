@@ -15,6 +15,10 @@ public class Controller {
     this.view = view;
   }
 
+  /**
+   * This is the menu that the end user sees in the console when the application starts. 
+   * What they see will depend on their input.
+   */
   public void menu() {
     try {
       view.menu();
@@ -33,7 +37,7 @@ public class Controller {
     }
   }
 
-  public void registerUser() throws Exception {
+  private  void registerUser() throws Exception {
     view.askUsername();
     String username = view.getStringInput();
 
@@ -45,7 +49,7 @@ public class Controller {
     menu();
   }
 
-  public void signIn() throws Exception {
+  private void signIn() throws Exception {
     view.askUsername();
     String username = view.getStringInput();
 
@@ -56,7 +60,11 @@ public class Controller {
     pickDashboard(username);
   } 
 
-  public void pickDashboard(String username) {
+  /**
+   * Picks a dashboard for the employee role and the admin role, since they dont have the same privileges.
+   * @param username
+   */
+  private void pickDashboard(String username) {
     if(username.equals("admin")) {
       adminDashboard();
     } else {
@@ -64,7 +72,7 @@ public class Controller {
     }
   }
 
-  public void adminDashboard() {
+  private void adminDashboard() {
     view.adminDashboard();
     String userAnswer = view.getStringInput();
 
@@ -82,7 +90,7 @@ public class Controller {
   }
 
 
-  public void userDashboard() {
+  private void userDashboard() {
     view.userDashboard();
     String userAnswer = view.getStringInput();
 
@@ -95,17 +103,17 @@ public class Controller {
     }
   }
 
-  public void viewCurrentUserInfo() {
+  private void viewCurrentUserInfo() {
     authView.printOneUser(auth.getCurrentUser());
     pickDashboard(auth.getCurrentUser().getUsername());
   }
 
-  public void printDatabase() {
+  private void printDatabase() {
     authView.printUserDatabase(auth.getAllUsers());
     pickDashboard(auth.getCurrentUser().getUsername());
   }
 
-  public void signOut() {
+  private void signOut() {
     auth.signOut();
     menu();
   }
