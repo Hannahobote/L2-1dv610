@@ -34,3 +34,6 @@ Although I haven’t written any tests with a framework, I  must agree with the 
 For the first time, I understood the concept of **cohesion**. I don’t think I implemented it well in my classes, although I do agree with the rule of high cohesion, which helps keep the class small (i.e **maintaining cohesion results in many small classes**). I think my classes in labb 1 and 2 are small. however there is no direct numeric limit on how much is too much code in one class, so i think this rule can be very subjective. Since this project was small, my controller class has been small as well, but they are usually over 400 lines long, and therefore holds too many responsibilities.
 
 (example of low cohesion)
+
+## Chapter 11, Systems
+Since I did not fully understand the usage of systems, I didn’t implement it in my code. From what I understood, its main point is to stay “clean on a higher level of abstraction”. An example I saw was using the factory patter, which I have used before in other projects, but I had no use of it in this project. One thing i did take away form this chapter was the use of **separation of concern**, which I did through the MVC pattern and classes that have related code.

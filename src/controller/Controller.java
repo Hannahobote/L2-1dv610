@@ -28,7 +28,6 @@ public class Controller {
         signIn();
       }
     } catch (Exception e) {
-      // System.out.println(e.getMessage());
       view.printError(e);
       menu();
     }

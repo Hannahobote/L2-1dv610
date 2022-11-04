@@ -28,7 +28,7 @@ public class View {
     System.out.println("=== Welcome to the Admin dashboard===");
     System.out.println("=== 3. sign out===");
     System.out.println("=== 4. view your user information===");
-    System.out.println("=== 5. view entire database===");
+    System.out.println("=== 5. view all employees===");
     System.out.println("\n");
   }
 
