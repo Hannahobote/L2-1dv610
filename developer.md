@@ -1,6 +1,7 @@
 ### manual
 ## vision
 ## krav
+utgå från testerna
 ## test 
 [test cases](test.md)
 
